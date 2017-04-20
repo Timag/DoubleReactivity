@@ -1,0 +1,48 @@
+---
+title: "Double Reactivity"
+author: "Andreas Tonio Liebrand"
+date: "26. August 2016"
+output: html_document
+runtime: shiny
+---
+
+## Case 1: The sales team
+
+You are the leader of a sales team with three employees, who sell four products. 
+To monitor the success of your team important key figures are the overall earnings as well as the earnings per product. 
+
+The following Rshiny+d3.js plot can answer four questions: 
+
+* Question 1: What are the overall earnings per person? (bar chart)
+
+* Question 2: How high (absolute/relative) are the overall earnings aggregated per category? (circle and table)
+
+* Question 3: How high (absolute/relative) are the overall earnings per category for each person? (Mouseover on the bars)
+
+* Question 4: How high are the absolute earnings  per person related to each other given a category? (Mouseover on the circle)
+
+```{r, echo=FALSE}
+shinyAppDir(
+  "./DoubleReactivity_Simple"
+ , options=list(
+   width="1400px", height="800px"
+ )
+)
+```
+
+## Case 2: Using R Charts
+
+R-User might be interested to customize the chart by using R plots. An example can be seen next, where data is split in groups which aggregated amount can be seen in the pie chart, while a mouseover on the pie chart shows the data distribution within each group.
+```{r, echo=FALSE}
+shinyAppDir(
+  "./d3_BarChart_Circles_RPlot"
+ , options=list(
+   width="1400px", height="800px"
+ )
+)
+```
+
+
+
+## Remarks
+The java script code is developed by [NPashaP](http://bl.ocks.org/NPashaP) and can be found [here](http://bl.ocks.org/NPashaP/96447623ef4d342ee09b).
